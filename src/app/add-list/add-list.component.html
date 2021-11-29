@@ -1,0 +1,20 @@
+<h1 class="header">ADD NEW LIST</h1>
+<div class="header">
+  <mat-card>
+    <mat-card-title>LIST DETAILS</mat-card-title>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>NAME</mat-label>
+        <input matInput required  id="name" [(ngModel)]="name" placeholder="LIST NAME">
+        <mat-icon matSuffix>dashboard</mat-icon>
+        <mat-hint>TRELLO LIST NAME</mat-hint>
+        <mat-error></mat-error>
+      </mat-form-field>
+    </p>
+
+    <mat-card-actions align="end">
+      <button mat-raised-button color="warn" (click)="goBack()">CANCEL</button>
+      <button mat-raised-button color="primary" (click)="createList()">CREATE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

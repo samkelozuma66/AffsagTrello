@@ -1,0 +1,35 @@
+<div class="mainconatainer">
+  
+
+  <h1 class="title">TELLO</h1>
+  <div class="header">
+    <mat-card>
+      <mat-card-title>USER API DETAILS</mat-card-title>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>API KEY</mat-label>
+          <input matInput required  id="key" [(ngModel)]="key" placeholder="API KEY">
+          <mat-icon matSuffix>supervised_user_circle</mat-icon>
+          <mat-hint>TRELLO API KEY</mat-hint>
+          
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>TOKEN</mat-label>
+          <input matInput required id="token" [(ngModel)]="token" placeholder="API TOKEN">
+          <mat-icon matSuffix>vpn_key</mat-icon>
+          <mat-hint>TRELLO API TOKEN</mat-hint>
+        </mat-form-field>
+      </p>
+      <mat-error id="error">{{error | uppercase}}</mat-error>
+      <mat-card-actions align="end">
+        <button mat-raised-button color="primary" (click)="getBoards()">GEt BOARDS</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <mat-divider></mat-divider>
+  <router-outlet ></router-outlet>
+</div>
+<!--<mat-slider min="1" max="100" step="1" value="50"></mat-slider>-->

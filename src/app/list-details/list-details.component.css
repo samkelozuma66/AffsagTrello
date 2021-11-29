@@ -1,0 +1,68 @@
+.header {
+	text-align: center;
+}
+/* DashboardComponent's private CSS styles */
+
+h2 {
+  text-align: center;
+}
+.containert {
+	background-image: url("https://trello-backgrounds.s3.amazonaws.com/SharedBackground/540x960/fae07dbaf2f89797b7d996b02639facb/photo-1637788644930-042f84cf00fa.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.board-menu {
+  padding: 0;
+  margin: auto;
+  max-width: 1000px;
+
+  /* flexbox */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 3%;
+  
+}
+.red-text {
+  color: red !important;
+}
+.green-text {
+  color: green !important;
+}
+mat-card {
+	margin-top: 2%;
+	max-width: 25%;
+}
+a {
+  background-color: #3f525c;
+  border-radius: 2px;
+  padding: 1rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  min-width: 70px;
+  margin: .5rem auto;
+  box-sizing: border-box;
+
+  /* flexbox */
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+}
+
+@media (min-width: 600px) {
+  a {
+    width: 18%;
+    box-sizing: content-box;
+  }
+}
+
+a:hover {
+  background-color: #000;
+}
