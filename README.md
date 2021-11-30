@@ -4,6 +4,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Installing this Application
 To run this app on you your local machine download the the repository , then navigate to it directory and run npm install 
 
+## Testing
+For testing I'm using Cypress
+ng add @cypress/schematic
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
