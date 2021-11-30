@@ -91,6 +91,35 @@ export class TrelloService {
 
     return resp;
   }
+
+  upadateBoard(boardId:string,boardName:string,boardDesc:string): Observable<Object>{
+    const creUrl = "https://api.trello.com/1/boards/" + boardId + "?name="+ boardName + "&desc=" + boardDesc + "&key=" + this.apiKey + "&token=" + this.apiToken;
+    const resp = this.http.put(creUrl,null);
+
+
+    return resp;
+  }
+  upadateList(listId:string,listName:string,listClosed:boolean): Observable<Object>{
+    const creUrl = "https://api.trello.com/1/lists/" + listId + "?name="+ listName + "&closed=" + listClosed + "&key=" + this.apiKey + "&token=" + this.apiToken;
+    const resp = this.http.put(creUrl,null);
+
+
+    return resp;
+  }
+  getLists(listId:string): Observable<list>{
+    const creUrl = "https://api.trello.com/1/lists/" + listId + "?fields=all" + "&key=" + this.apiKey + "&token=" + this.apiToken;
+    const resp = this.http.get<list>(creUrl);
+
+
+    return resp;
+  }
+  upadateCard(cardId:string,cardName:string,cardClosed:boolean): Observable<Object>{
+    const creUrl = "https://api.trello.com/1/cards/" + cardId + "?name="+ cardName + "&closed=" + cardClosed + "&key=" + this.apiKey + "&token=" + this.apiToken;
+    const resp = this.http.put(creUrl,null);
+
+
+    return resp;
+  }
   /**
    * Handle Http operation that failed.
    * Let the app continue.

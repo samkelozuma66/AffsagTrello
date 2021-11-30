@@ -1,0 +1,30 @@
+<div *ngIf="board">
+	<h1 class="header">UPDATE {{board.name}} BOARD</h1>
+	<div  class="header">
+	  <mat-card>
+	    <mat-card-title>BOARD DETAILS</mat-card-title>
+	    <p>
+	      <mat-form-field appearance="outline">
+	        <mat-label>NAME</mat-label>
+	        <input matInput required  id="name" [(ngModel)]="board.name" placeholder="BOARD NAME" >
+	        <mat-icon matSuffix>dashboard</mat-icon>
+	        <mat-hint>TRELLO BOARD NAME</mat-hint>
+	        <mat-error></mat-error>
+	      </mat-form-field>
+	    </p>
+
+	    <p>
+	      <mat-form-field appearance="outline">
+	        <mat-label>DESCRIPTION</mat-label>
+	        <textarea matInput required id="description" [(ngModel)]="board.desc" placeholder="BOARD DESCRIPTION"></textarea>
+	        <mat-icon matSuffix>description</mat-icon>
+	        <mat-hint>TRELLO BOARD DESCRIPTION</mat-hint>
+	      </mat-form-field>
+	    </p>
+	    <mat-card-actions align="end">
+	      <button mat-raised-button color="warn" (click)="goBack()">CANCEL</button>
+	      <button mat-raised-button color="primary" (click)="upadateBoard()">SAVE</button>
+	    </mat-card-actions>
+	  </mat-card>
+	</div>
+</div>

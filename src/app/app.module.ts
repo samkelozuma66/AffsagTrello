@@ -20,6 +20,9 @@ import { AddListComponent } from './add-list/add-list.component';
 import { ListDetailsComponent } from './list-details/list-details.component';
 import { AddCardComponent } from './add-card/add-card.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { UpdateBoardComponent } from './update-board/update-board.component';
+import { UpdateListComponent } from './update-list/update-list.component';
+import { UpdateCardComponent } from './update-card/update-card.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     BoardDetailsComponent,
     AddListComponent,
     ListDetailsComponent,
-    AddCardComponent
+    AddCardComponent,
+    UpdateBoardComponent,
+    UpdateListComponent,
+    UpdateCardComponent
   ],
   imports: [
     BrowserModule,

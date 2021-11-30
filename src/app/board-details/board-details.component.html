@@ -19,7 +19,7 @@
 		  <mat-card-actions>
 		    <button mat-button mat-raised-button color="primary" routerLink="/listdetail/{{list.id}}">Open</button>
 		    <button mat-button mat-raised-button color="warn" (click)="achiveList(list.id,i)">Achive</button>
-		    <button mat-button mat-raised-button color="accent" >Update</button>
+		    <button mat-button mat-raised-button color="accent"  routerLink="/updateList/{{list.id}}">Update</button>
 		  </mat-card-actions>
 		</mat-card>
 

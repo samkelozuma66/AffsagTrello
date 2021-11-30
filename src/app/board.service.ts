@@ -3,6 +3,7 @@ import { board } from './board';
 import { TrelloService } from './trello.service';
 import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
+import { list } from './list';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,21 @@ export class BoardService {
     return this.trelloService.createBoard(boardName,boardDesc);
 
   }
+  upadateBoard(boardId:string,boardName:string,boardDesc:string): Observable<Object> {
+    
+    return this.trelloService.upadateBoard(boardId,boardName,boardDesc);
+
+  }
+  upadateList(listId:string,listName:string,listClosed:boolean): Observable<Object> {
+    
+    return this.trelloService.upadateList(listId,listName,listClosed);
+
+  }
+  upadateCard(cardId:string,cardName:string,cardClosed:boolean): Observable<Object> {
+    
+    return this.trelloService.upadateCard(cardId,cardName,cardClosed);
+
+  }
   createList(boardId:string,listName: string): Observable<Object>{
     return this.trelloService.createList(boardId,listName) ;
   }
@@ -42,7 +58,10 @@ export class BoardService {
     this.trelloService.getBoards(this.trelloService.apiKey,this.trelloService.apiToken)
       .subscribe(boards => {this.boards = boards;this.updateBoad(boards)}) ;
   }
-
+  getList(listId:string): Observable<list>{
+    return this.trelloService.getLists(listId)
+      ;
+  }  
   getBoardsCom():  Observable<board[]>{
     return this.trelloService.getBoards(this.trelloService.apiKey,this.trelloService.apiToken)
       ;

@@ -1,0 +1,23 @@
+<div *ngIf="list">
+	<h1 class="header">ADD NEW LIST</h1>
+	<div class="header">
+	  <mat-card>
+	    <mat-card-title>LIST DETAILS</mat-card-title>
+	    <p>
+	      <mat-form-field appearance="outline">
+	        <mat-label>NAME</mat-label>
+	        <input matInput required  id="name" [(ngModel)]="list.name" placeholder="LIST NAME">
+	        <mat-icon matSuffix>dashboard</mat-icon>
+	        <mat-hint>TRELLO LIST NAME</mat-hint>
+	        <mat-error></mat-error>
+	      </mat-form-field>
+	    </p>
+
+	    <mat-card-actions align="end">
+	      <button mat-raised-button color="warn" (click)="goBack()">CANCEL</button>
+	      <button mat-raised-button color="primary" (click)="upadateList()">SAVE</button>
+		    <button mat-button mat-raised-button color="accent" (click)="closeList()">Close List</button>
+	    </mat-card-actions>
+	  </mat-card>
+	</div>
+</div>
