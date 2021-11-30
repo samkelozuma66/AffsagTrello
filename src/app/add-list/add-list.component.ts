@@ -16,6 +16,7 @@ export class AddListComponent implements OnInit {
   id:string = String(this.route.snapshot.paramMap.get('id'));
   @Input() name: string = ""; 
   resp:Object = "";
+  @Input() error:string = "";
 
 
   constructor(private route: ActivatedRoute,
@@ -32,6 +33,10 @@ export class AddListComponent implements OnInit {
   }
 
   createList(){
+    if(this.name == ""){
+      this.error = "LIST NAME IS REQUIRED";
+      return;
+    } 
     this.boardService.createList(this.id,this.name).subscribe(repson => {this.resp = repson;this.goBack()});
   }
 }

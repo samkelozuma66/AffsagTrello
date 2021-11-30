@@ -16,6 +16,7 @@ export class AddCardComponent implements OnInit {
   id:string = String(this.route.snapshot.paramMap.get('id'));
   @Input() name: string = ""; 
   resp:Object = "";
+  @Input() error:string = "";
 
   constructor(private route: ActivatedRoute,
               private boardService: BoardService,
@@ -31,6 +32,10 @@ export class AddCardComponent implements OnInit {
   }
 
   createCard(){
+    if(this.name == ""){
+      this.error = "CARD NAME IS REQUIRED";
+      return;
+    } 
     this.boardService.createCard(this.id,this.name).subscribe(repson => {this.resp = repson; this.goBack();});
     
   }

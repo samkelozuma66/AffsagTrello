@@ -11,7 +11,7 @@
         <mat-error></mat-error>
       </mat-form-field>
     </p>
-
+    <mat-error id="error">{{error | uppercase}}</mat-error>
     <mat-card-actions align="end">
       <button mat-raised-button color="warn" (click)="goBack()">CANCEL</button>
       <button mat-raised-button color="primary" (click)="createCard()">CREATE</button>

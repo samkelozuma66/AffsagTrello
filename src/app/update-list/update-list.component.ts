@@ -16,6 +16,7 @@ export class UpdateListComponent implements OnInit {
   constructor(private route: ActivatedRoute,private boardService: BoardService,private router: Router,private location: Location) { }
   @Input() list?: list;
   resp:Object = "";
+  @Input() error:string = "";
   
   ngOnInit(): void {
     this.getList();
@@ -34,8 +35,13 @@ export class UpdateListComponent implements OnInit {
                                            error => {});
   }
   closeList(){
-    if(this.list)
-    this.boardService.upadateList(this.id,this.list.name,true).subscribe(resp => {this.resp = resp; this.goBack();},
+    if(this.list){
+      if(this.list.name == ""){
+      this.error = "BOARD NAME IS REQUIRED";
+        return;
+      } 
+      this.boardService.upadateList(this.id,this.list.name,true).subscribe(resp => {this.resp = resp; this.goBack();},
                                                   error => {});
+    }
   }
 }

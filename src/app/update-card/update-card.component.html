@@ -1,1 +1,24 @@
-<p>update-card works!</p>
+<div *ngIf="card">
+	<h1 class="header">UPDATE {{card.name}} CARD</h1>
+	<div class="header">
+	  <mat-card>
+	    <mat-card-title>CARD DETAILS</mat-card-title>
+	    <p>
+	      <mat-form-field appearance="outline">
+	        <mat-label>NAME</mat-label>
+	        <input matInput required  id="name" [(ngModel)]="card.name" placeholder="CARD NAME">
+	        <mat-icon matSuffix>dashboard</mat-icon>
+	        <mat-hint>TRELLO CARD NAME</mat-hint>
+	        <mat-error></mat-error>
+	      </mat-form-field>
+	    </p>
+	    <mat-error id="error">{{error | uppercase}}</mat-error>
+	    <mat-card-actions align="end">
+	      <button mat-raised-button color="warn" (click)="goBack()">CANCEL</button>
+	      <button mat-raised-button color="primary" (click)="updateCard()">SAVE</button>
+		  <button mat-button mat-raised-button color="accent" (click)="closeCard()">Close Card</button>
+	    </mat-card-actions>
+	  </mat-card>
+	</div>
+
+</div>

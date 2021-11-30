@@ -4,6 +4,7 @@ import { TrelloService } from './trello.service';
 import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { list } from './list';
+import { card } from './card';
 
 @Injectable({
   providedIn: 'root'
@@ -62,6 +63,10 @@ export class BoardService {
     return this.trelloService.getLists(listId)
       ;
   }  
+  getCard(cardId:string): Observable<card>{
+    return this.trelloService.getCard(cardId)
+      ;
+  } 
   getBoardsCom():  Observable<board[]>{
     return this.trelloService.getBoards(this.trelloService.apiKey,this.trelloService.apiToken)
       ;

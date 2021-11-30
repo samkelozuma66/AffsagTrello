@@ -16,6 +16,7 @@ export class AddBoardComponent implements OnInit {
   resp:Object = "";
 
   boards:board[] = [] ;
+  @Input() error:string = "";
   constructor(private boardService: BoardService,private router: Router,private location: Location) { }
 
   ngOnInit(): void {
@@ -25,6 +26,15 @@ export class AddBoardComponent implements OnInit {
     this.location.back();
   }
   createBoard(){
+
+    if(this.name == ""){
+      this.error = "BOARD NAME IS REQUIRED";
+      return;
+    } 
+    if(this.description == ""){
+      this.error = "BOARD description IS REQUIRED";
+      return;
+    } 
     this.boardService.createBoard(this.name,this.description).subscribe(repson => {this.resp = repson;this.goBack()}) ;
   }
 

@@ -19,6 +19,14 @@ export class AppComponent {
   constructor(private trelloService: TrelloService, private boardService: BoardService,private router: Router) { }
 
   getBoards(): void{
+    if(this.key == ""){
+      this.error = "API KEY IS REQUIRED";
+      return;
+    } 
+    if(this.token == ""){
+      this.error = "API TOKEN IS REQUIRED";
+      return;
+    } 
     this.trelloService.getBoards(this.key,this.token)
       .subscribe(boards => {this.boards = boards;this.update();this.error="";},error => {this.error = error.error;this.router.navigateByUrl('/');}) ;
 

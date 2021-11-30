@@ -16,6 +16,7 @@ export class UpdateBoardComponent implements OnInit {
   @Input() name: string = ""; 
   @Input() description: string = ""; 
   resp:Object = "";
+  @Input() error:string = "";
 
   @Input() board?: board ;
 
@@ -35,8 +36,20 @@ export class UpdateBoardComponent implements OnInit {
 
   }
   upadateBoard(){
+    
     if(this.board)
+    {
+      if(this.board.name == ""){
+      this.error = "BOARD NAME IS REQUIRED";
+        return;
+      } 
+      if(this.board.desc == ""){
+        this.error = "BOARD description IS REQUIRED";
+        return;
+      } 
+      
     this.boardService.upadateBoard(this.id,this.board.name,this.board.desc).subscribe(resp => {this.resp = resp; this.goBack();},
                                                   error => {});
+    }
   }
 }

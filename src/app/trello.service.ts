@@ -21,8 +21,12 @@ export class TrelloService {
     return this.http.get<card[]>(cardsUrl);
   }
   getList(boardId:string): Observable<list[]>{
-    const listUrl = "https://api.trello.com/1/boards/" + boardId + "/lists" + "?key=" + this.apiKey + "&token=" + this.apiToken;
+    const listUrl = "https://api.trello.com/1/boards/" + boardId + "/lists" + "?fields=all&key=" + this.apiKey + "&token=" + this.apiToken;
     return this.http.get<list[]>(listUrl);
+  }
+  getCard(cardId:string): Observable<card>{
+    const listUrl = "https://api.trello.com/1/cards/" + cardId + "?key=" + this.apiKey + "&token=" + this.apiToken;
+    return this.http.get<card>(listUrl);
   }
   getBoards(key: string , token: string): Observable<board[]>{
     const fullUrl = this.trelloUrl + "key=" + key + "&token=" + token; 

@@ -20,7 +20,8 @@
         <mat-hint>TRELLO BOARD DESCRIPTION</mat-hint>
       </mat-form-field>
     </p>
-    <mat-card-actions align="end">
+    <mat-error id="error">{{error | uppercase}}</mat-error>
+    <mat-card-actions align="end" >
       <button mat-raised-button color="warn" (click)="goBack()">CANCEL</button>
       <button mat-raised-button color="primary" (click)="createBoard()">CREATE</button>
     </mat-card-actions>
