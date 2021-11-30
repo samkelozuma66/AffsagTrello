@@ -1,6 +1,12 @@
 # AffsafTrello
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
+## Installing this Application
+To run this app on you your local machine download the the repository , then navigate to it directory and run npm install 
+
+## Testing
+For testing I'm using Cypress
+ng add @cypress/schematic
 
 ## Development server
 
